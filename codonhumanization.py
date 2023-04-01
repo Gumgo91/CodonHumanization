@@ -136,7 +136,6 @@ class CodonHumanizer():
                 indexs.append(v)
             codon_index.append(sum(indexs)/len(indexs))
         
-        plt.figure(dpi=400)
         plt.plot(range(len(probs)), probs, label='Humanity')
         plt.plot(range(len(codon_index)), codon_index, label='CAI')
         plt.xlabel('Generation')
