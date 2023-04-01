@@ -16,7 +16,19 @@ Codon optimization is a molecular biological technique that modulates codon usag
 Codon humanization can be performed using an already trained classification model. In addition, all materials for learning and reproduction of genetic algorithms are provided.
 
 ## Installation
+```
+$ git clone https://github.com/Gumgo91/CodonHumanization.git
+```
+After cloning the repository by executing the above command, you can use it as follows.
+```
+from codonhumanization import CodonHumanizer
 
+ch = CodonHumanizer()
+
+sequence = "ATGATGATG" # example sequence
+sequence_pool = ch.evolution(sequence)
+print(sequence_pool[0])
+```
 
 ## Method
 For the purpose of implementing codon humanization, a dataset was compiled and a classification model was developed. The binary classification model can differentiate between a random sequence and a human sequence when presented with a DNA sequence. By employing directed evolution via genetic algorithms on a DNA sequence, the corresponding amino acid sequence remains unchanged, but the DNA sequence is transformed to become more human-like. The figure below shows the sequential processes in which a binary classification model is trained, and a given sequence is humanized using a genetic algorithm.
